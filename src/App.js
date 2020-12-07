@@ -302,7 +302,7 @@ function App() {
                       </>
                       }
 
-                      <Section title={"Additional InformationSection"} section={additionalInformationSection} handleSection={handleAdditionalInformationSection} />
+                      <Section title={"Additional Information"} section={additionalInformationSection} handleSection={handleAdditionalInformationSection} />
                       
                       {additionalInformationSection &&
                       <>
