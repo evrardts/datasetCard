@@ -325,9 +325,10 @@ function App() {
             <div className="text-center">
               <p className="mt-1 text-4xl font-extrabold text-gray-700 sm:tracking-tight">Information</p>
               {!fieldFocussed &&
-              <p className="max-w-xl mt-5 mx-auto text-lg text-gray-500">Click on a field to see instructions/example</p>
+              <p className="max-w-xl mt-5 mx-auto text-lg text-gray-500">Click on a field to see instructions & example</p>
               }
             </div>
+            {fieldFocussed &&
             <div className="max-w-7xl text-left mx-auto py-12 px-4 divide-y-2 divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
                 <div className="mt-6">
                   <dl className="space-y-8 divide-gray-200 text-gray-600 text-left">
@@ -343,7 +344,7 @@ function App() {
                 </div>
                 <div className="mt-12">
                   <dl className="space-y-8 divide-gray-200 text-gray-600 text-left">
-                  <p className="mt-1 text-xl font-extrabold text-gray-700 sm:tracking-tight">Example</p>
+                  <p className="mt-1 text-xl font-extrabold text-gray-700 sm:tracking-tight"><ReactMarkdown renderers={{link: props => <a href={props.href} target="_blank">{props.children}</a>}} source={"Example from the [ELI5 dataset card](https://github.com/huggingface/datasets/blob/master/datasets/eli5/README.md)"}/></p>
                   {Instructions.instructions[fieldFocussed] && Instructions.instructions[fieldFocussed].example.map((ex) => (
                     <div key={ex}>
                       <ReactMarkdown source={ex}
@@ -354,6 +355,7 @@ function App() {
                   </dl>
                 </div>   
             </div>
+            }
             <div className="absolute bottom-0 text-xs left-0 ml-4 text-gray-500">
               developed by
               <a className="ml-1 no-underline text-gray-500" href={"https://huggingface.co/evrardts"} target="_blank">
