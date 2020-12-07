@@ -214,7 +214,7 @@ function App() {
             </div>
             <div className="absolute bottom-0 text-xs left-0 ml-4 text-gray-500">
               developed by
-              <a className="ml-1 no-underline text-gray-500" href={"https://github.com/evrardts"} target="_blank">
+              <a className="ml-1 no-underline text-gray-500" href={"https://huggingface.co/evrardts"} target="_blank">
                 Evrard t'Serstevens
               </a>
             </div> 
