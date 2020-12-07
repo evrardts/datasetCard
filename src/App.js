@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import InputField from "./InputField"
 import Instructions from './Instructions'
 import ReactMarkdown from "react-markdown";
 import {save} from 'save-file'
@@ -156,218 +157,37 @@ function App() {
                     <div className="mt-2">
                       <dl className="space-y-8 divide-y divide-gray-200">
                         
-                        <div className="md:grid md:grid-cols-12 md:gap-8">
-                          <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Homepage
-                          </dt>
-                          <dd className="md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="homepage" name="about" rows="1" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
+                        <InputField title={"Homepage"} id={"homepage"} rows={1} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Repository"} id={"repository"} rows={1} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Paper"} id={"paper"} rows={1} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Leaderboard"} id={"leaderboard"} rows={1} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Point of Contact"} id={"contact"} rows={1} handleClick={handleClick} handleChange={handleChange} />
 
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                          <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Repository
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="repository" name="about" rows="1" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                          <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Paper
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="paper" name="about" rows="1" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                          <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Leaderboard
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="leaderboard" name="about" rows="1" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                          <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Point of Contact
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="contact" name="about" rows="1" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                          <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Dataset Summary
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="datasetSummary" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-                
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Supported Tasks and Leaderboards
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="supportedTasks" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Languages
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="languages" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Data Instances
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="dataInstances" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Data Fields
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="dataFields" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Data Splits
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="dataSplits" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Curation Rationale
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="curationRationale" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Initial Data Collection and Normalization
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="dataCollection" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Who are the source language producers?
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="sourceLanguage" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Annotation Process
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="annotationProcess" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Who are the annotators?
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="annotators" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Personal and Sensitive Information
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="personalInformation" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Social Impact of Dataset
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="socialImpact" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Discussion of Biases
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="biasesDiscussion" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Other Known Limitations
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="limitations" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Dataset Curators
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="datasetCurators" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Licensing Information
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="licensingInformation" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-
-                        <div className="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                        <dt className="text-base font-medium text-gray-700 md:col-span-3">
-                            Citation Information
-                          </dt>
-                          <dd className="mt-2 md:mt-0 md:col-span-9">
-                            <textarea onClick={(e) => handleClick(e)} onChange={(e) => handleChange(e)} id="citationInformation" name="about" rows="4" className="font-sans p-2 shadow-sm border border-solid border-gray-300 block w-full text-gray-600 sm:text-sm rounded-md"></textarea>
-                          </dd>
-                        </div>
-                
+                        <InputField title={"Dataset Summary"} id={"datasetSummary"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Supported Tasks and Leaderboards"} id={"supportedTasks"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Languages"} id={"languages"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Data Instances"} id={"dataInstances"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Data Fields"} id={"dataFields"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Data Splits"} id={"dataSplits"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Curation Rationale"} id={"curationRationale"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Initial Data Collection and Normalization"} id={"dataCollection"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Who are the source language producers?"} id={"sourceLanguage"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Annotation Process"} id={"annotationProcess"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Who are the annotators?"} id={"annotators"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Personal and Sensitive Information"} id={"personalInformation"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Social Impact of Dataset"} id={"socialImpact"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Discussion of Biases"} id={"biasesDiscussion"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Other Known Limitations"} id={"limitations"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Dataset Curators"} id={"datasetCurators"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Licensing Information"} id={"licensingInformation"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                        <InputField title={"Citation Information"} id={"citationInformation"} rows={4} handleClick={handleClick} handleChange={handleChange} />
                         
                       </dl>
                     </div>
+
                   </div>
                 </div>
+
                 <div className="flex justify-center mt-10">
                 <button onClick={() => exportFile(card)} type="button" className="cursor-pointer inline-flex items-center px-3 py-2 border border-solid border-gray-300 shadow-sm text-base leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                   Export
@@ -395,10 +215,8 @@ function App() {
                         <div key={para}>
                           <ReactMarkdown source={para}
                           renderers={{link: props => <a href={props.href} target="_blank">{props.children}</a>}}
-                          />
-                        
+                          />                    
                         </div>
-
                       ))}
                       </dl>
                     </div>
