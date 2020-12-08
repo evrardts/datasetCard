@@ -98,125 +98,124 @@ function App() {
 
   async function exportFile(card){ 
     var textTest = 
-    `${card.yamlTags ? card.yamlTags : "[Needs More Information]"}
+`${card.yamlTags ? card.yamlTags : "[Needs More Information]"}
 
-    # Dataset Card for ${card.datasetName ? card.datasetName : "[Needs More Information]"}
-    
-    ## Table of Contents
-    - [Dataset Description](#dataset-description)
-      - [Dataset Summary](#dataset-summary)
-      - [Supported Tasks](#supported-tasks-and-leaderboards)
-      - [Languages](#languages)
-    - [Dataset Structure](#dataset-structure)
-      - [Data Instances](#data-instances)
-      - [Data Fields](#data-instances)
-      - [Data Splits](#data-instances)
-    - [Dataset Creation](#dataset-creation)
-      - [Curation Rationale](#curation-rationale)
-      - [Source Data](#source-data)
-      - [Annotations](#annotations)
-      - [Personal and Sensitive Information](#personal-and-sensitive-information)
-    - [Considerations for Using the Data](#considerations-for-using-the-data)
-      - [Social Impact of Dataset](#social-impact-of-dataset)
-      - [Discussion of Biases](#discussion-of-biases)
-      - [Other Known Limitations](#other-known-limitations)
-    - [Additional Information](#additional-information)
-      - [Dataset Curators](#dataset-curators)
-      - [Licensing Information](#licensing-information)
-      - [Citation Information](#citation-information)
-    
-    ## Dataset Description
-    
-    - **Homepage:** ${card.homepage ? card.homepage : "[Needs More Information]"}
-    - **Repository:** ${card.repository ? card.repository : "[Needs More Information]"}
-    - **Paper:** ${card.paper ? card.paper : "[Needs More Information]"}
-    - **Leaderboard:** ${card.leaderboard ? card.leaderboard : "[Needs More Information]"}
-    - **Point of Contact:** ${card.contact ? card.contact : "[Needs More Information]"}
-    
-    ### Dataset Summary
-    
-    ${card.datasetSummary ? card.datasetSummary: "[Needs More Information]"}
-    
-    ### Supported Tasks and Leaderboards
-    
-    ${card.supportedTasks ? card.supportedTasks : "[Needs More Information]"}
-    
-    ### Languages
-    
-    ${card.languages ? card.languages : "[Needs More Information]"}
-    
-    ## Dataset Structure
-    
-    ### Data Instances
-    
-    ${card.dataInstances ? card.dataInstances : "[Needs More Information]"}
-    
-    ### Data Fields
-    
-    ${card.dataFields ? card.dataFields : "[Needs More Information]"}
-    
-    ### Data Splits
-    
-    ${card.dataSplits ? card.dataSplits : "[Needs More Information]"}
-    
-    ## Dataset Creation
-    
-    ### Curation Rationale
-    
-    ${card.curationRationale ? card.curationRationale : "[Needs More Information]"}
-    
-    ### Source Data
-    
-    #### Initial Data Collection and Normalization
-    
-    ${card.dataCollection ? card.dataCollection : "[Needs More Information]"}
-    
-    #### Who are the source language producers?
-    
-    ${card.sourceLanguage ? card.sourceLanguage : "[Needs More Information]"}
-    
-    ### Annotations
-    
-    #### Annotation process
-    
-    ${card.annotationProcess ? card.annotationProcess : "[Needs More Information]"}
-    
-    #### Who are the annotators?
-    
-    ${card.annotators ? card.annotators : "[Needs More Information]"}
-    
-    ### Personal and Sensitive Information
-    
-    ${card.personalInformation ? card.personalInformation : "[Needs More Information]"}
-    
-    ## Considerations for Using the Data
-    
-    ### Social Impact of Dataset
-    
-    ${card.socialImpact ? card.socialImpact : "[Needs More Information]"}
-    
-    ### Discussion of Biases
-    
-    ${card.biasesDiscussion ? card.biasesDiscussion : "[Needs More Information]"}
-    
-    ### Other Known Limitations
-    
-    ${card.limitations ? card.limitations : "[Needs More Information]"}
-    
-    ## Additional Information
-    
-    ### Dataset Curators
-    
-    ${card.datasetCurators ? card.datasetCurators : "[Needs More Information]"}
-    
-    ### Licensing Information
-    
-    ${card.licensingInformation ? card.licensingInformation : "[Needs More Information]"}
-    
-    ### Citation Information
-    
-    ${card.citationInformation ? card.citationInformation : "[Needs More Information]"}
-    `
+# Dataset Card for ${card.datasetName ? card.datasetName : "[Needs More Information]"}
+
+## Table of Contents
+- [Dataset Description](#dataset-description)
+  - [Dataset Summary](#dataset-summary)
+  - [Supported Tasks](#supported-tasks-and-leaderboards)
+  - [Languages](#languages)
+- [Dataset Structure](#dataset-structure)
+  - [Data Instances](#data-instances)
+  - [Data Fields](#data-instances)
+  - [Data Splits](#data-instances)
+- [Dataset Creation](#dataset-creation)
+  - [Curation Rationale](#curation-rationale)
+  - [Source Data](#source-data)
+  - [Annotations](#annotations)
+  - [Personal and Sensitive Information](#personal-and-sensitive-information)
+- [Considerations for Using the Data](#considerations-for-using-the-data)
+  - [Social Impact of Dataset](#social-impact-of-dataset)
+  - [Discussion of Biases](#discussion-of-biases)
+  - [Other Known Limitations](#other-known-limitations)
+- [Additional Information](#additional-information)
+  - [Dataset Curators](#dataset-curators)
+  - [Licensing Information](#licensing-information)
+  - [Citation Information](#citation-information)
+
+## Dataset Description
+
+- **Homepage:** ${card.homepage ? card.homepage : "[Needs More Information]"}
+- **Repository:** ${card.repository ? card.repository : "[Needs More Information]"}
+- **Paper:** ${card.paper ? card.paper : "[Needs More Information]"}
+- **Leaderboard:** ${card.leaderboard ? card.leaderboard : "[Needs More Information]"}
+- **Point of Contact:** ${card.contact ? card.contact : "[Needs More Information]"}
+
+### Dataset Summary
+
+${card.datasetSummary ? card.datasetSummary: "[Needs More Information]"}
+
+### Supported Tasks and Leaderboards
+
+${card.supportedTasks ? card.supportedTasks : "[Needs More Information]"}
+
+### Languages
+
+${card.languages ? card.languages : "[Needs More Information]"}
+
+## Dataset Structure
+
+### Data Instances
+
+${card.dataInstances ? card.dataInstances : "[Needs More Information]"}
+
+### Data Fields
+
+${card.dataFields ? card.dataFields : "[Needs More Information]"}
+
+### Data Splits
+
+${card.dataSplits ? card.dataSplits : "[Needs More Information]"}
+
+## Dataset Creation
+
+### Curation Rationale
+
+${card.curationRationale ? card.curationRationale : "[Needs More Information]"}
+
+### Source Data
+
+#### Initial Data Collection and Normalization
+
+${card.dataCollection ? card.dataCollection : "[Needs More Information]"}
+
+#### Who are the source language producers?
+
+${card.sourceLanguage ? card.sourceLanguage : "[Needs More Information]"}
+
+### Annotations
+
+#### Annotation process
+
+${card.annotationProcess ? card.annotationProcess : "[Needs More Information]"}
+
+#### Who are the annotators?
+
+${card.annotators ? card.annotators : "[Needs More Information]"}
+
+### Personal and Sensitive Information
+
+${card.personalInformation ? card.personalInformation : "[Needs More Information]"}
+
+## Considerations for Using the Data
+
+### Social Impact of Dataset
+
+${card.socialImpact ? card.socialImpact : "[Needs More Information]"}
+
+### Discussion of Biases
+
+${card.biasesDiscussion ? card.biasesDiscussion : "[Needs More Information]"}
+
+### Other Known Limitations
+
+${card.limitations ? card.limitations : "[Needs More Information]"}
+
+## Additional Information
+
+### Dataset Curators
+
+${card.datasetCurators ? card.datasetCurators : "[Needs More Information]"}
+
+### Licensing Information
+
+${card.licensingInformation ? card.licensingInformation : "[Needs More Information]"}
+
+### Citation Information
+
+${card.citationInformation ? card.citationInformation : "[Needs More Information]"}`
     await save(textTest, "README.md")
   }
 
