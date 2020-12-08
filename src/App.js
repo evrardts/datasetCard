@@ -97,10 +97,10 @@ function App() {
   }
 
   async function exportFile(card){ 
-    var textTest = `
-    ${card.yamlTags}
+    var textTest = 
+    `${card.yamlTags ? card.yamlTags : "[Needs More Information]"}
 
-    # Dataset Card for ${card.datasetName}
+    # Dataset Card for ${card.datasetName ? card.datasetName : "[Needs More Information]"}
     
     ## Table of Contents
     - [Dataset Description](#dataset-description)
@@ -127,95 +127,95 @@ function App() {
     
     ## Dataset Description
     
-    - **Homepage:** ${card.homepage}
-    - **Repository:** ${card.repository}
-    - **Paper:** ${card.paper}
-    - **Leaderboard:** ${card.leaderboard}
-    - **Point of Contact:** ${card.contact}
+    - **Homepage:** ${card.homepage ? card.homepage : "[Needs More Information]"}
+    - **Repository:** ${card.repository ? card.repository : "[Needs More Information]"}
+    - **Paper:** ${card.paper ? card.paper : "[Needs More Information]"}
+    - **Leaderboard:** ${card.leaderboard ? card.leaderboard : "[Needs More Information]"}
+    - **Point of Contact:** ${card.contact ? card.contact : "[Needs More Information]"}
     
     ### Dataset Summary
     
-    ${card.datasetSummary}
+    ${card.datasetSummary ? card.datasetSummary: "[Needs More Information]"}
     
     ### Supported Tasks and Leaderboards
     
-    ${card.supportedTasks}
+    ${card.supportedTasks ? card.supportedTasks : "[Needs More Information]"}
     
     ### Languages
     
-    ${card.languages}
+    ${card.languages ? card.languages : "[Needs More Information]"}
     
     ## Dataset Structure
     
     ### Data Instances
     
-    ${card.dataInstances}
+    ${card.dataInstances ? card.dataInstances : "[Needs More Information]"}
     
     ### Data Fields
     
-    ${card.dataFields}
+    ${card.dataFields ? card.dataFields : "[Needs More Information]"}
     
     ### Data Splits
     
-    ${card.dataSplits}
+    ${card.dataSplits ? card.dataSplits : "[Needs More Information]"}
     
     ## Dataset Creation
     
     ### Curation Rationale
     
-    ${card.curationRationale}
+    ${card.curationRationale ? card.curationRationale : "[Needs More Information]"}
     
     ### Source Data
     
     #### Initial Data Collection and Normalization
     
-    ${card.dataCollection}
+    ${card.dataCollection ? card.dataCollection : "[Needs More Information]"}
     
     #### Who are the source language producers?
     
-    ${card.sourceLanguage}
+    ${card.sourceLanguage ? card.sourceLanguage : "[Needs More Information]"}
     
     ### Annotations
     
     #### Annotation process
     
-    ${card.annotationProcess}
+    ${card.annotationProcess ? card.annotationProcess : "[Needs More Information]"}
     
     #### Who are the annotators?
     
-    ${card.annotators}
+    ${card.annotators ? card.annotators : "[Needs More Information]"}
     
     ### Personal and Sensitive Information
     
-    ${card.personalInformation}
+    ${card.personalInformation ? card.personalInformation : "[Needs More Information]"}
     
     ## Considerations for Using the Data
     
     ### Social Impact of Dataset
     
-    ${card.socialImpact}
+    ${card.socialImpact ? card.socialImpact : "[Needs More Information]"}
     
     ### Discussion of Biases
     
-    ${card.biasesDiscussion}
+    ${card.biasesDiscussion ? card.biasesDiscussion : "[Needs More Information]"}
     
     ### Other Known Limitations
     
-    ${card.limitations}
+    ${card.limitations ? card.limitations : "[Needs More Information]"}
     
     ## Additional Information
     
     ### Dataset Curators
     
-    ${card.datasetCurators}
+    ${card.datasetCurators ? card.datasetCurators : "[Needs More Information]"}
     
     ### Licensing Information
     
-    ${card.licensingInformation}
+    ${card.licensingInformation ? card.licensingInformation : "[Needs More Information]"}
     
     ### Citation Information
     
-    ${card.citationInformation}
+    ${card.citationInformation ? card.citationInformation : "[Needs More Information]"}
     `
     await save(textTest, "README.md")
   }
@@ -244,18 +244,18 @@ function App() {
                       <Section title={"YAML Tags"} section={tagsSection} handleSection={handleTagsSection} />
                       
                       {tagsSection &&
-                      <InputField title={"YAML tags"} id={"yamlTags"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.yamlTags} title={"YAML tags"} id={"yamlTags"} rows={6} handleClick={handleClick} handleChange={handleChange} />
                       }
 
                       <Section title={"Urls"} section={urlsSection} handleSection={handleUrlsSection} />
 
                       {urlsSection && 
                       <>
-                      <InputField title={"Homepage"} id={"homepage"} rows={1} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Repository"} id={"repository"} rows={1} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Paper"} id={"paper"} rows={1} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Leaderboard"} id={"leaderboard"} rows={1} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Point of Contact"} id={"contact"} rows={1} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.homepage} title={"Homepage"} id={"homepage"} rows={2} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.repository} title={"Repository"} id={"repository"} rows={2} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.paper} title={"Paper"} id={"paper"} rows={2} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.leaderboard} title={"Leaderboard"} id={"leaderboard"} rows={2} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.contact} title={"Point of Contact"} id={"contact"} rows={2} handleClick={handleClick} handleChange={handleChange} />
                       </>
                       }
 
@@ -263,9 +263,9 @@ function App() {
                       
                       {datasetDescriptionSection &&
                       <>
-                      <InputField title={"Dataset Summary"} id={"datasetSummary"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Supported Tasks and Leaderboards"} id={"supportedTasks"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Languages"} id={"languages"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.datasetSummary} title={"Dataset Summary"} id={"datasetSummary"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.supportedTasks} title={"Supported Tasks and Leaderboards"} id={"supportedTasks"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.languages} title={"Languages"} id={"languages"} rows={6} handleClick={handleClick} handleChange={handleChange} />
                       </>
                       }
 
@@ -273,9 +273,9 @@ function App() {
 
                       {datasetStructureSection && 
                       <>
-                      <InputField title={"Data Instances"} id={"dataInstances"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Data Fields"} id={"dataFields"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Data Splits"} id={"dataSplits"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.dataInstances} title={"Data Instances"} id={"dataInstances"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.dataFields} title={"Data Fields"} id={"dataFields"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.dataSplits} title={"Data Splits"} id={"dataSplits"} rows={6} handleClick={handleClick} handleChange={handleChange} />
                       </>
                       }
 
@@ -283,12 +283,12 @@ function App() {
 
                       {datasetCreationSection &&
                       <>
-                      <InputField title={"Curation Rationale"} id={"curationRationale"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Initial Data Collection and Normalization"} id={"dataCollection"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Who are the source language producers?"} id={"sourceLanguage"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Annotation Process"} id={"annotationProcess"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Who are the annotators?"} id={"annotators"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Personal and Sensitive Information"} id={"personalInformation"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.curationRationale} title={"Curation Rationale"} id={"curationRationale"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.dataCollection} title={"Initial Data Collection and Normalization"} id={"dataCollection"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.sourceLanguage} title={"Who are the source language producers?"} id={"sourceLanguage"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.annotationProcess} title={"Annotation Process"} id={"annotationProcess"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.annotators} title={"Who are the annotators?"} id={"annotators"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.personalInformation} title={"Personal and Sensitive Information"} id={"personalInformation"} rows={6} handleClick={handleClick} handleChange={handleChange} />
                       </>
                       }
                       
@@ -296,9 +296,9 @@ function App() {
 
                       {considerationsSection &&
                       <>
-                      <InputField title={"Social Impact of Dataset"} id={"socialImpact"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Discussion of Biases"} id={"biasesDiscussion"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Other Known Limitations"} id={"limitations"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.socialImpact} title={"Social Impact of Dataset"} id={"socialImpact"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.biasesDiscussion} title={"Discussion of Biases"} id={"biasesDiscussion"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField value={card.limitations} title={"Other Known Limitations"} id={"limitations"} rows={6} handleClick={handleClick} handleChange={handleChange} />
                       </>
                       }
 
@@ -306,9 +306,9 @@ function App() {
                       
                       {additionalInformationSection &&
                       <>
-                      <InputField title={"Dataset Curators"} id={"datasetCurators"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Licensing Information"} id={"licensingInformation"} rows={4} handleClick={handleClick} handleChange={handleChange} />
-                      <InputField title={"Citation Information"} id={"citationInformation"} rows={4} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField title={"Dataset Curators"} id={"datasetCurators"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField title={"Licensing Information"} id={"licensingInformation"} rows={6} handleClick={handleClick} handleChange={handleChange} />
+                      <InputField title={"Citation Information"} id={"citationInformation"} rows={6} handleClick={handleClick} handleChange={handleChange} />
                       </>
                       }
                       
@@ -345,13 +345,13 @@ function App() {
                 <div className="mt-12">
                   <dl className="space-y-8 divide-gray-200 text-gray-600 text-left">
                   <p className="mt-1 text-xl font-extrabold text-gray-700 sm:tracking-tight"><ReactMarkdown renderers={{link: props => <a href={props.href} target="_blank">{props.children}</a>}} source={"Example from the [ELI5 dataset card](https://github.com/huggingface/datasets/blob/master/datasets/eli5/README.md)"}/></p>
-                  {Instructions.instructions[fieldFocussed] && Instructions.instructions[fieldFocussed].example.map((ex) => (
-                    <div key={ex}>
-                      <ReactMarkdown source={ex}
-                      renderers={{link: props => <a href={props.href} target="_blank">{props.children}</a>}}
-                      />                    
+                  <div className="">
+                  {Instructions.instructions[fieldFocussed] && Instructions.instructions[fieldFocussed].example.map((ex, index) => (
+                    <div className="mt-2" key={ex+index}>
+                      {ex}
                     </div>
                   ))}
+                  </div>
                   </dl>
                 </div>   
             </div>

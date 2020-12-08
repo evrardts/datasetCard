@@ -8,27 +8,27 @@ export default {
               "Add YAML tags"
             ],
             example: [
-              `---
-              annotations_creators:
-              - no-annotation
-              language_creators:
-              - found
-              languages:
-              - en
-              licenses:
-              - unknown
-              multilinguality:
-              - monolingual
-              size_categories:
-              - 100K<n<1M
-              source_datasets:
-              - original
-              task_categories:
-              - question-answering
-              task_ids:
-              - abstractive-qa
-              - open-domain-qa
-              ---`
+              "---",
+              `annotations_creators:`,
+              `- no-annotation`,
+              `language_creators:`,
+              `- found`,
+              `languages:`,
+              `- en`,
+              `licenses:`,
+              `- unknown`,
+              `multilinguality:`,
+              `- monolingual`,
+              `size_categories:`,
+              `- 100K<n<1M`,
+              `source_datasets:`,
+              `- original`,
+              `task_categories:`,
+              `- question-answering`,
+              `task_ids:`,
+              `- abstractive-qa`,
+              `- open-domain-qa`,
+              `---`,
             ]
           },
           homepage: {
@@ -60,7 +60,7 @@ export default {
               "If the dataset supports an active leaderboard, add link here"
             ],
             example: [
-              ""
+              "[N/A]"
             ]
           },  
           contact: {
@@ -111,20 +111,18 @@ export default {
             example: [
               "A typical data point comprises a question, with a `title` containing the main question and a `selftext` which sometimes elaborates on it, and a list of answers from the forum sorted by the number of upvotes they obtained. Additionally, the URLs in each of the text fields have been  extracted to respective lists and replaced by generic tokens in the text.",
               "An example from the ELI5 test set looks as follows:",
-              `
-              {'q_id': '8houtx',
-               'title': 'Why does water heated to room temperature feel colder than the air around it?',
-               'selftext': '',
-               'document': '',
-               'subreddit': 'explainlikeimfive',
-               'answers': {'a_id': ['dylcnfk', 'dylcj49'],
-                'text': ["Water transfers heat more efficiently than air. When something feels cold it's because heat is being transferred from your skin to whatever you're touching. Since water absorbs the heat more readily than air, it feels colder.",
-                 "Air isn't as good at transferring heat compared to something like water or steel (sit on a room temperature steel bench vs. a room temperature wooden bench, and the steel one will feel more cold).\n\nWhen you feel cold, what you're feeling is heat being transferred out of you.  If there is no breeze, you feel a certain way.  If there's a breeze, you will get colder faster (because the moving air is pulling the heat away from you), and if you get into water, its quite good at pulling heat from you.   Get out of the water and have a breeze blow on you while you're wet, all of the water starts evaporating, pulling even more heat from you."],
-                'score': [5, 2]},
-               'title_urls': {'url': []},
-               'selftext_urls': {'url': []},
-               'answers_urls': {'url': []}}
-              `
+              `{'q_id': '8houtx'`,
+               `'title': 'Why does water heated to room temperature feel colder than the air around it?'`,
+               `'selftext': ''`,
+               `'document': ''`,
+               `'subreddit': 'explainlikeimfive'`,
+               `'answers': {'a_id': ['dylcnfk', 'dylcj49']`,
+               `'text': ["Water transfers heat more efficiently than air. When something feels cold it's because heat is being transferred from your skin to whatever you're touching. Since water absorbs the heat more readily than air, it feels colder.",
+                 "Air isn't as good at transferring heat compared to something like water or steel (sit on a room temperature steel bench vs. a room temperature wooden bench, and the steel one will feel more cold).\n\nWhen you feel cold, what you're feeling is heat being transferred out of you.  If there is no breeze, you feel a certain way.  If there's a breeze, you will get colder faster (because the moving air is pulling the heat away from you), and if you get into water, its quite good at pulling heat from you.   Get out of the water and have a breeze blow on you while you're wet, all of the water starts evaporating, pulling even more heat from you."]`,
+              `'score': [5, 2]}`,
+              `'title_urls': {'url': []}`,
+              `'selftext_urls': {'url': []}`,
+              `'answers_urls': {'url': []}}`,
             ]
           },
           dataFields: {
@@ -293,28 +291,26 @@ export default {
               "If the dataset has a [DOI](https://www.doi.org/), please provide it here."
             ],
             example: [
-              `
-              @inproceedings{eli5_lfqa,
-                author    = {Angela Fan and
-                            Yacine Jernite and
-                            Ethan Perez and
-                            David Grangier and
-                            Jason Weston and
-                            Michael Auli},
-                editor    = {Anna Korhonen and
-                            David R. Traum and
-                            Llu{\'{\i}}s M{\`{a}}rquez},
-                title     = {{ELI5:} Long Form Question Answering},
-                booktitle = {Proceedings of the 57th Conference of the Association for Computational
-                            Linguistics, {ACL} 2019, Florence, Italy, July 28- August 2, 2019,
-                            Volume 1: Long Papers},
-                pages     = {3558--3567},
-                publisher = {Association for Computational Linguistics},
-                year      = {2019},
-                url       = {https://doi.org/10.18653/v1/p19-1346},
-                doi       = {10.18653/v1/p19-1346}
-              }
-              `
+              `@inproceedings{eli5_lfqa`,
+              `author    = {Angela Fan and`,
+              `Yacine Jernite and`,
+              `Ethan Perez and`,
+              `David Grangier and`,
+              `Jason Weston and`,
+              `Michael Auli},`,
+              `editor    = {Anna Korhonen and`,
+                `David R. Traum and`,
+                `Llu{\'{\i}}s M{\`{a}}rquez},`,
+                `title     = {{ELI5:} Long Form Question Answering},`,
+                `booktitle = {Proceedings of the 57th Conference of the Association for Computational`,
+                  `Linguistics, {ACL} 2019, Florence, Italy, July 28- August 2, 2019,`,
+                  `Volume 1: Long Papers},`,
+                  `pages     = {3558--3567},`,
+                  `publisher = {Association for Computational Linguistics},`,
+                  `year      = {2019},`,
+                  `url       = {https://doi.org/10.18653/v1/p19-1346},`,
+                  `doi       = {10.18653/v1/p19-1346}`,
+              `}`,
             ]
           },
     }
