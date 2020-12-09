@@ -224,18 +224,18 @@ ${card.citationInformation ? card.citationInformation : "[Needs More Information
     <div className="overflow-y-auto min-h-full font-sans">
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-8">
-          <div className="max-h-screen flex overflow-hidden bg-white">
-            <div className="max-w-7xl mb-32 mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+          <div className="max-h-screen flex justify-center overflow-hidden bg-white">
+            <div className="xxs:max-w-xxs xs:max-w-xs md:max-w-2xl xl:max-w-4xl xxl:min-w-5xl py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
               <div className="text-center">
                 <p className="mt-1 text-4xl font-extrabold text-gray-700 sm:tracking-tight">New Dataset Card for <input onChange={(e) => handleChange(e)}  id="datasetName" placeholder="dataset name" maxLength="200" className="ml-4 py-4 text-4xl text-gray-600 w-80 border border-solid border-gray-200 border-none h-10 rounded-md shadow" /></p>
-                <p className="max-w-xl mt-5 mx-auto text-lg text-gray-500">Fill in the form below</p>
+                <p className="max-w-xl mt-2 mx-auto text-lg text-gray-500">Fill in the form below</p>
               </div>
               <div className="flex justify-end">
                 <button onClick={() => exportFile(card)} type="button" className="cursor-pointer inline-flex items-center px-3 py-2 border border-solid border-gray-300 shadow-sm text-base leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                   Export
                 </button>
               </div>
-              <div className="shadow max-h-full overflow-y-auto rounded-lg mt-4">
+              <div className="shadow w-full xxs:max-h-xxs md:max-h-xs mb-32 lg:max-h-md xl:max-h-xl xxl:max-h-screen overflow-y-auto rounded-lg mt-4">
                 <div className="max-w-7xl px-4 divide-y-2 divide-gray-200 sm:px-6 lg:px-8">
                   <div className="">
                     <dl className="space-y-8 divide-y p-6 divide-gray-200">
@@ -320,7 +320,7 @@ ${card.citationInformation ? card.citationInformation : "[Needs More Information
         </div>
         <div className="col-span-4">
         <div className="h-screen flex overflow-hidden bg-gray-100">
-          <div className="max-w-7xl mx-auto w-full overflow-y-auto py-16 px-4 sm:py-24">
+          <div className="max-w-7xl mx-auto w-full py-8 px-4 sm:py-12">
             <div className="text-center">
               <p className="mt-1 text-4xl font-extrabold text-gray-700 sm:tracking-tight">Information</p>
               {!fieldFocussed &&
@@ -328,8 +328,8 @@ ${card.citationInformation ? card.citationInformation : "[Needs More Information
               }
             </div>
             {fieldFocussed &&
-            <div className="max-w-7xl text-left mx-auto py-12 px-4 divide-y-2 divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
-                <div className="mt-6">
+            <div className="max-w-7xl xxs:max-h-xxs md:max-h-xs mb-32 lg:max-h-md xl:max-h-xl xxl:max-h-screen overflow-y-auto text-left mx-auto py-12 px-4 divide-y-2 divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
+                <div className="mt-12">
                   <dl className="space-y-8 divide-gray-200 text-gray-600 text-left">
                   <p className="mt-1 text-xl font-extrabold text-gray-700 sm:tracking-tight">Instructions</p>
                   {Instructions.instructions[fieldFocussed] && Instructions.instructions[fieldFocussed].paragraph.map((para) => (
